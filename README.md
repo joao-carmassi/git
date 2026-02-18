@@ -1,3 +1,4 @@
+# Commands
 
 ## SSH
 
@@ -195,3 +196,9 @@ git tag -a <tag-name> -m "tag message"  # Creates an annotated tag with an assoc
 ```bash
 git tag -v <tag-name>  # Verifies the signature of an annotated tag.
 ```
+
+---
+
+# posh-git
+
+[posh-git](https://github.com/dahlbyk/posh-git) is a PowerShell module that provides Git/PowerShell integration. It enhances your command prompt with Git status summary information and tab completion for Git commands, branch names, paths, and more, making it easier and more efficient to work with Git in PowerShell.
