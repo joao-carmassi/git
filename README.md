@@ -1,196 +1,197 @@
+
 ## SSH
 
 ```bash
-ssh-keygen -t rsa -b 4096 -C "seu_email@example.com"
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
 
-## Configuração Inicial
+## Initial Setup
 
 ```bash
-git init  # Inicializa um novo repositório Git local.
-```
-
-```bash
-git remote add origin <url>  # Conecta seu repositório local a um repositório remoto.
-```
-
-## Trabalhando com Alterações
-
-```bash
-git status  # Verifica o estado atual do seu repositório.
+git init  # Initializes a new local Git repository.
 ```
 
 ```bash
-git add .  # Adiciona todas as mudanças atuais ao índice para commit.
+git remote add origin <url>  # Connects your local repository to a remote repository.
+```
+
+## Working with Changes
+
+```bash
+git status  # Checks the current state of your repository.
 ```
 
 ```bash
-git reset <nome-do-item>  #Remove item das mudanças atuais do Índice para commit.
+git add .  # Adds all current changes to the index for commit.
 ```
 
 ```bash
-git diff  # Mostra as diferenças entre arquivos não rastreados e o índice.
+git reset <item-name>  # Removes item from the current staged changes for commit.
 ```
 
 ```bash
-git commit -m "nome do commit"  # Registra as mudanças no repositório com uma mensagem de commit.
-```
-
-## Ramificação e Fusão
-
-```bash
-git branch -M main  # Renomeia a branch atual para "main".
+git diff  # Shows the differences between unstaged files and the index.
 ```
 
 ```bash
-git branch  # Lista todas as branches locais.
+git commit -m "commit name"  # Records the changes in the repository with a commit message.
+```
+
+## Branching and Merging
+
+```bash
+git branch -M main  # Renames the current branch to "main".
 ```
 
 ```bash
-git branch <nome-da-branch>  # Cria uma nova branch.
+git branch  # Lists all local branches.
 ```
 
 ```bash
-git switch <nome-da-branch>  # Muda para a branch especificada.
+git branch <branch-name>  # Creates a new branch.
 ```
 
 ```bash
-git switch -c <nome-da-branch>  # Cria e muda para a branch especificada.
+git switch <branch-name>  # Switches to the specified branch.
 ```
 
 ```bash
-git merge <nome-da-branch>  # Funde a branch especificada na branch atual.
+git switch -c <branch-name>  # Creates and switches to the specified branch.
 ```
 
 ```bash
-git merge --squash <nome-da-branch>  # Funde a branch especificada na branch atual sem historico de commits.
+git merge <branch-name>  # Merges the specified branch into the current branch.
 ```
 
 ```bash
-git cherry-pick <commit-hash>  # Leva o ultimo commit da branch que você queira par a branch atual.
+git merge --squash <branch-name>  # Merges the specified branch into the current branch without commit history.
 ```
 
 ```bash
-git branch -D <nome-da-branch>  # Exclui a branch especificada.
+git cherry-pick <commit-hash>  # Takes the last commit from the branch you want to the current branch.
 ```
 
 ```bash
-git push origin :<nome-da-branch>  # Remove a branch especificada do repositório remoto.
-```
-
-## Colaboração
-
-```bash
-git push -u origin main  # Envia os commits locais para o repositório remoto (main) pela primeira vez.
+git branch -D <branch-name>  # Deletes the specified branch.
 ```
 
 ```bash
-git pull --rebase # Puxa e mescla alterações do repositório remoto para o repositório local.
+git push origin :<branch-name>  # Removes the specified branch from the remote repository.
 ```
 
-## Logs e Histórico
+## Collaboration
 
 ```bash
-git log  # Mostra o histórico de commits.
-```
-
-```bash
-git log --oneline  # Mostra o histórico de commits em uma linha por commit.
+git push -u origin main  # Sends local commits to the remote repository (main) for the first time.
 ```
 
 ```bash
-git log --graph  # Mostra o histórico de commits em formato gráfico.
+git pull --rebase # Pulls and merges changes from the remote repository to the local repository.
+```
+
+## Logs and History
+
+```bash
+git log  # Shows the commit history.
 ```
 
 ```bash
-git show  # Mostra informações sobre um commit específico.
+git log --oneline  # Shows the commit history with one line per commit.
 ```
 
 ```bash
-git log <nome-da-branch>  # Mostra o histórico de commits de uma branch específica.
-```
-
-## Revertendo Alterações
-
-```bash
-git revert <codigo-do-commit>  # Reverte um commit específico, criando um novo commit.
+git log --graph  # Shows the commit history in a graphical format.
 ```
 
 ```bash
-git reset --hard HEAD  # Reverte o diretório de trabalho e o índice para o estado do último commit.
+git show  # Shows information about a specific commit.
+```
+
+```bash
+git log <branch-name>  # Shows the commit history of a specific branch.
+```
+
+## Reverting Changes
+
+```bash
+git revert <commit-code>  # Reverts a specific commit by creating a new commit.
+```
+
+```bash
+git reset --hard HEAD  # Reverts the working directory and index to the state of the last commit.
 ```
 
 ## Stash
 
 ```bash
-git stash  # Guarda mudanças temporárias que não estão prontas para commit.
+git stash  # Saves temporary changes that are not ready for commit.
 ```
 
 ```bash
-git stash pop  # Aplica e remove a última entrada de stash.
+git stash pop  # Applies and removes the last stash entry.
 ```
 
 ```bash
-git stash drop  # Remove a última entrada de stash.
+git stash drop  # Removes the last stash entry.
 ```
 
 ```bash
-git stash clear  # Limpa todas as entradas de stash.
+git stash clear  # Clears all stash entries.
 ```
 
 ```bash
-git stash push -m "nome da stash"  # Guarda mudanças temporárias com uma mensagem associada.
+git stash push -m "stash name"  # Saves temporary changes with an associated message.
 ```
 
 ## Worktree
 
 ```bash
-git worktree add ../<nome-da-pasta> <nome-da-branch> # Cria uma nova pasta e faz o checkout automático para a branch 
+git worktree add ../<folder-name> <branch-name> # Creates a new folder and automatically checks out the branch
 
 ```
 
 ```bash
-git worktree remove ../feature-x # Remove a worktree sem deletar a branch
+git worktree remove ../feature-x # Removes the worktree without deleting the branch
 ```
 
 ```bash
-git worktree list # Listar todas as worktrees ativas
+git worktree list # Lists all active worktrees
 ```
 
 ## Tags
 
 ```bash
-git tag <nome-da-tag>  # Cria uma tag leve na versão atual.
+git tag <tag-name>  # Creates a lightweight tag at the current version.
 ```
 
 ```bash
-git tag <nome-da-tag> <codigo-do-commit>  # Cria uma tag associada a um commit específico.
+git tag <tag-name> <commit-code>  # Creates a tag associated with a specific commit.
 ```
 
 ```bash
-git tag  # Lista todas as tags no repositório.
+git tag  # Lists all tags in the repository.
 ```
 
 ```bash
-git push origin <nome-da-tag>  # Envia uma tag específica para o repositório remoto.
+git push origin <tag-name>  # Sends a specific tag to the remote repository.
 ```
 
 ```bash
-git push origin --tags  # Envia todas as tags locais para o repositório remoto.
+git push origin --tags  # Sends all local tags to the remote repository.
 ```
 
 ```bash
-git tag -d <nome-da-tag>  # Exclui uma tag localmente.
+git tag -d <tag-name>  # Deletes a tag locally.
 ```
 
 ```bash
-git push --delete origin <nome-da-tag>  # Remove uma tag do repositório remoto.
+git push --delete origin <tag-name>  # Removes a tag from the remote repository.
 ```
 
 ```bash
-git tag -a <nome-da-tag> -m "mensagem da tag"  # Cria uma tag anotada com uma mensagem associada.
+git tag -a <tag-name> -m "tag message"  # Creates an annotated tag with an associated message.
 ```
 
 ```bash
-git tag -v <nome-da-tag>  # Verifica a assinatura de uma tag anotada.
+git tag -v <tag-name>  # Verifies the signature of an annotated tag.
 ```
